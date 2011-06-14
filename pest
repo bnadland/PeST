@@ -25,6 +25,8 @@ my $timeout = 0.1;
 my $select = IO::Select->new();
 $select->add(\*STDIN);
 
+STDOUT->autoflush(1);
+
 my $in  = Redis->new;
 my $out = Redis->new;
 
