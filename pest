@@ -30,7 +30,7 @@ STDOUT->autoflush(1);
 my $in  = Redis->new;
 my $out = Redis->new;
 
-my $channel = $ARGV[0] or die "Usage: pest <channel>\n";
+my $channel = $ARGV[0] or "pest";
 
 $in->subscribe($channel, sub {
         my ($message, $topic, $subscribed_topic) = @_;
