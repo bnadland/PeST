@@ -5,6 +5,12 @@ Shell pipelines are pretty useful. And if you want to have multiple
 outputs from one producer you can redirect its output to a temporary
 file and use multiple tail -f processes to pipe to multiple consumers.
 
+But if the temporary file is bigger than your available space you are
+out of luck. This tool solves that use case.
+
+It also is arguably more convenient (provided you already have redis
+running for other purposes).
+
 Usage
 -----
 
