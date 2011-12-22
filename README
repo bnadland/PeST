@@ -1,19 +1,22 @@
 pest
 ====
 
-powerful Shell pipes via Redis pub/sub functionality
+Shell pipelines are pretty useful. And if you want to have multiple
+outputs from one producer you can redirect its output to a temporary
+file and use multiple tail -f processes to pipe to multiple consumers.
 
 Usage
 -----
 
-Make sure that redis-server is running:
-$ redis-server
+redis-server needs to running and listening to its standard port.
 
-Publishing output to channel foobar:
-$ something_that_sends_to_stdout | pest foobar
+Now you do something like this:
 
-Getting output from channel foobar:
-$ pest foobar | do_something_with_it
+	$ something_with_a_lot_of_output | pest | some_work_with_output
+
+and in another terminal:
+
+	$ pest | some_other_work_with_output
 
 Requirements
 ------------
